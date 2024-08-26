@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,45 @@ using UnityEngine.SceneManagement;
 
 public class pasueMenu : MonoBehaviour
 {
-    private bool isPause;
+    
+    public bool isPause = false;
     [SerializeField] private GameObject OptionPanel; //  Option Panel UI (always set active close).
-    
-    
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        if (OptionPanel == null)
+        {
+            GameObject parentGameObject = GameObject.FindGameObjectWithTag("option");  // Change this to the parent of the object
+            OptionPanel = FindInactiveObjectByName("PanelOption", parentGameObject );
+        }
+        
+        
+    }
+
+    GameObject FindInactiveObjectByName(string name, GameObject parent)
+    {
+        Transform[] transforms = parent.GetComponentsInChildren<Transform>(true);
+        foreach (Transform t in transforms)
+        {
+            if (t.name == name)
+            {
+                return t.gameObject;
+            }
+        }
+        return null;
+    }
+
     void Update()
     {
         // if player press Esc if not pause it will call PauseGame if it pause it will continue game.
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
+            Debug.Log(isPause);
             if (isPause)
             {
                 ResumeGame();
@@ -27,6 +58,7 @@ public class pasueMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        Debug.Log("pause game");
         OptionPanel.SetActive(true); // show Option Panel UI.
         Time.timeScale = 0f; // stop anything in game .
         AudioManager.Instance.BackgroundSource.Pause();
@@ -37,8 +69,9 @@ public class pasueMenu : MonoBehaviour
     {
         OptionPanel.SetActive(false); // close Option Panel UI.
         Time.timeScale = 1f;// continue game.
-        isPause = false;
         AudioManager.Instance.BackgroundSource.UnPause();
+        isPause = false;
+        
     }
 
     public void GoToMainMenu()

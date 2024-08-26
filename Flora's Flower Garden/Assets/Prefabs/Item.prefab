@@ -361,7 +361,7 @@ MonoBehaviour:
   price: 0
   canSell: 0
   flowerIcon: {fileID: 0}
-  itemIndex: 0
+  flowerToSell: {fileID: 0}
 --- !u!1 &7920322494038876770
 GameObject:
   m_ObjectHideFlags: 0

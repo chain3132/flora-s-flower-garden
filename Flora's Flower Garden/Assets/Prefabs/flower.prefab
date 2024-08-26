@@ -281,12 +281,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flower: {fileID: 11400000, guid: 4a9df92d54e1d704e86bce9f2c815c78, type: 2}
+  flowerStore: {fileID: 0}
   modelWindow: {fileID: 0}
   _textMeshProUGUI: {fileID: 0}
-  IsNotLock: 0
-  _levelToUnlock: 0
   _imageflower: {fileID: 0}
-  LockImage: {fileID: 0}
 --- !u!1 &4370901783095585286
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,6 +35,11 @@ public class CoinSystem : MonoBehaviour, IDataPersistance
         currentCoin += coin;
         coinText.text = currentCoin.ToString();
     }
+    public void ReduceCoins(int coin)
+    {
+        currentCoin -= coin;
+        coinText.text = currentCoin.ToString();
+    }
     public void LoadData(GameData data)
     {
         currentCoin = data.currentCoin;

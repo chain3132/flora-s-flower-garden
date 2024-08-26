@@ -10,6 +10,7 @@ public class Item : ScriptableObject
     public string itemName;
     public Sprite icon;
     public bool canSell;
+    public bool canPlace;
     public int price = 0;
 
 }

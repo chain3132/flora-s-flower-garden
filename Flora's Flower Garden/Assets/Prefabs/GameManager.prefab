@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6867519483539116261}
   - component: {fileID: 636255165715184692}
   - component: {fileID: 7616587044531458705}
-  - component: {fileID: 5210276061794432282}
   - component: {fileID: 7048314943518495977}
   m_Layer: 0
   m_Name: GameManager
@@ -55,18 +54,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 168fabf0ed77c7b4b85bc441d169a42e, type: 2}
   - {fileID: 11400000, guid: 0b681378a52a2454399b1b2e873ac2d1, type: 2}
   - {fileID: 11400000, guid: be5c84001fc6a2f4f9daa3a75198448d, type: 2}
-  lockUi:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  flowerUi:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &7616587044531458705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,22 +66,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f882370f3d953b54c9ccae18b4e7cc89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLevel: 1
   xpThresholds: 
   Expbar: {fileID: 0}
   levelText: {fileID: 0}
---- !u!114 &5210276061794432282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2372806337536127346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75a6ec103d7d5d144949e483739cc7f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OptionPanel: {fileID: 0}
+  LevelPOPUp: {fileID: 0}
 --- !u!114 &7048314943518495977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,3 +84,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCoin: 0
+  coinText: {fileID: 0}

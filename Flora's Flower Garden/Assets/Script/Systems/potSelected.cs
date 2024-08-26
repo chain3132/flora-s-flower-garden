@@ -23,8 +23,8 @@ public class potSelected : MonoBehaviour
     
     public GameObject _selectedPot;
     private GameObject seedPosition;
-    private GameObject soilPosition;
-    
+    public GameObject soilPosition;
+    private soilPots soilPots;
     
     
     [SerializeField]private GameObject flowerImage;
@@ -48,6 +48,7 @@ public class potSelected : MonoBehaviour
         // growth.GetComponent<TextMeshPro>();
         // water.GetComponent<TextMeshPro>();
         // fertilizer.GetComponent<TextMeshPro>();
+       
     }
     
 
@@ -55,8 +56,8 @@ public class potSelected : MonoBehaviour
     {
         Vector3 mousePosition3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePosition = new Vector2(mousePosition3D.x, mousePosition3D.y);
-
         RaycastHit2D hit = Physics2D.Raycast(mousePosition,Vector2.zero);
+        
         if (EventSystem.current.IsPointerOverGameObject()) {
             return; 
         }
@@ -65,7 +66,8 @@ public class potSelected : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("pots"))
             {
                 _selectedPot = hit.collider.gameObject;
-                
+                soilPosition =  FindChildWithTag(_selectedPot,"soilPosition");
+                seedPosition = FindChildWithTag(_selectedPot,"flowerPosition");
                 if (Input.GetKey(KeyCode.E) && !watering.Instance.isWatering)
                 {
                     seedPosition = FindChildWithTag(_selectedPot,"flowerPosition");
@@ -75,16 +77,13 @@ public class potSelected : MonoBehaviour
                     Vector3 uiPotPos = Camera.main.WorldToScreenPoint(_selectedPot.transform.position + Vector3.up * 1f);
                     UiPot.transform.position = uiPotPos;
                 }
-                else if (watering.Instance.isWatering && Input.GetMouseButtonDown(0))
+                else if (watering.Instance.isWatering && Input.GetMouseButtonDown(0) && soilPosition.GetComponent<soilPots>().potHasSoil )
                 {
-                    seedPosition = FindChildWithTag(_selectedPot,"flowerPosition");
                     seedPosition.GetComponent<flowerPot>().watered = true;
-                    
                     GameManager.Instance.Watering();
                 }
-                else if (soil.Instance.isSoil && Input.GetMouseButtonDown(0))
+                else if (soil.Instance.isSoil && Input.GetMouseButtonDown(0) && !soilPosition.GetComponent<soilPots>().potHasSoil)
                 {
-                    soilPosition =  FindChildWithTag(_selectedPot,"soilPosition");
                     soilPosition.GetComponent<soilPots>().soil();
                 }
                 

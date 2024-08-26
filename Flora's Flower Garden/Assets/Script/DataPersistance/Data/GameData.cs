@@ -12,13 +12,16 @@ public class GameData
     public List<FlowerPotData> flowerInPots = new List<FlowerPotData>();
     public List<Item> Items;
     public Item flowerItem;
+    public float _sfxVolume;
+    public float _musicVolume;
+    
     
     public GameData()
     {
         this.playerLevel = 1;
         this.currentExp = 0f;
         this.currentCoin = 0;
-
+    
     }
 }
 [System.Serializable]

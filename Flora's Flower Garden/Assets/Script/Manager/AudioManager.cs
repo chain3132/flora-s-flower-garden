@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+    public AudioListener _AudioListener;
     [Header("Audio Source")] 
     public AudioSource BackgroundSource;
     public AudioSource SFXSource;
@@ -26,6 +27,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip levelUp;
 
     private float _trackTimer;
+    [SerializeField] private pasueMenu _pasueMenu;
     
         
 
@@ -40,6 +42,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+        
     }
 
     private void Start()
@@ -50,14 +53,23 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (BackgroundSource.isPlaying)
+        if (BackgroundSource.isPlaying && !_pasueMenu.isPause)
         {
-            _trackTimer += 1 * Time.deltaTime;
+            if (!_pasueMenu.isPause)
+            {
+                _trackTimer += 1 * Time.deltaTime;
+            }
+            
         }
 
-        if (!BackgroundSource.isPlaying || _trackTimer >= BackgroundSource.clip.length)
+        if (!BackgroundSource.isPlaying || _trackTimer >= BackgroundSource.clip.length && _pasueMenu.isPause == false )
         {
-            ChangeSong(Random.Range(0,BackgroundSong.Length));
+            if (!_pasueMenu.isPause)
+            {
+                Debug.Log("changeSong");
+                ChangeSong(Random.Range(0,BackgroundSong.Length));
+            }
+            
         }
     }
 

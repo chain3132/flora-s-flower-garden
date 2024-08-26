@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class bookHandle : MonoBehaviour
 {
+    [SerializeField] private GameObject bookUI;
+    
     private bool IsMouseOverUI()
     {
         return EventSystem.current.IsPointerOverGameObject(); // check is player pointing over Ui
@@ -14,8 +16,11 @@ public class bookHandle : MonoBehaviour
     {
         if (!IsMouseOverUI()) // 
         {
-            Debug.Log("bookClicked"); // do stuff
+            bookUI.SetActive(true);
         }
-        
     }
+
+    
+
+    
 }

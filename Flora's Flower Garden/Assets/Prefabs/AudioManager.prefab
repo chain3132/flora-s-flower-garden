@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 330383279283557667}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1802340532778802117, guid: 0d33077d670ce184195011bfef7f562a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -169,10 +169,10 @@ AudioSource:
   m_GameObject: {fileID: 1918008242151844726}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6843250421450111437, guid: 0d33077d670ce184195011bfef7f562a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.543
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -303,8 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8cd36fe6d29e9647af2853fb3c4dba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _AudioListener: {fileID: 0}
   BackgroundSource: {fileID: 4112223169642213792}
   SFXSource: {fileID: 3658793177069270367}
+  LevelSource: {fileID: 6721231416527319883}
   openInventory: {fileID: 8300000, guid: ced5cea6e770eca479e4cab284465338, type: 3}
   BackgroundSong:
   - {fileID: 8300000, guid: 208302c7e138f2a4289a0f5d95d4d679, type: 3}
@@ -320,6 +322,7 @@ MonoBehaviour:
   pickUpCoin: {fileID: 8300000, guid: cc649ff95dca99b4c97ac2c6258c1583, type: 3}
   pickUpExp: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
   levelUp: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+  _pasueMenu: {fileID: 0}
 --- !u!1 &7975824353203916104
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +364,7 @@ AudioSource:
   m_GameObject: {fileID: 7975824353203916104}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1802340532778802117, guid: 0d33077d670ce184195011bfef7f562a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

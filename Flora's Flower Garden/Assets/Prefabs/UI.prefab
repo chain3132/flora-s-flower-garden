@@ -1739,7 +1739,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1803af02d42df3240bdf44689abadc82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: HomePage
+  Camera: {fileID: 0}
+  buttonBack: {fileID: 0}
+  potUi: {fileID: 0}
+  seedUi: {fileID: 0}
+  toolUi: {fileID: 0}
+  flowerStoreButton: {fileID: 0}
+  furnitureStoreButton: {fileID: 0}
+  flowerStorePanel: {fileID: 0}
+  furnitureStorePanel: {fileID: 0}
+  _animator: {fileID: 0}
+  buttonSideToLeft: {fileID: 0}
+  buttonSideToRight: {fileID: 0}
+  rightSide: {x: -40.9, y: 0, z: -10}
+  leftSide: {x: -79.2, y: 0, z: -10}
+  center: {x: -60, y: 0, z: -10}
+  speed: 1
 --- !u!1 &8573661739758905911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,3 +2675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flower: {fileID: 11400000, guid: 4a9df92d54e1d704e86bce9f2c815c78, type: 2}
+  flowerStore: {fileID: 0}
+  modelWindow: {fileID: 0}
+  _textMeshProUGUI: {fileID: 0}
+  _imageflower: {fileID: 0}

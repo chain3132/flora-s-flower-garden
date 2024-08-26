@@ -99,7 +99,7 @@ public class InventoryManager : MonoBehaviour , IDataPersistance
             
         }
     }
-    public int Count(List<Item> items, Item item)
+    public int Count(List<Item> items, Item item) // Count the number of items available.
     {
         return items.Count(n => n == item);
     }

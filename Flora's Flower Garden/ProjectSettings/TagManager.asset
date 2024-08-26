@@ -10,6 +10,7 @@ TagManager:
   - flowerImage
   - soilPosition
   - button
+  - option
   layers:
   - Default
   - TransparentFX
